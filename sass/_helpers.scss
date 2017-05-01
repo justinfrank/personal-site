@@ -1,0 +1,19 @@
+.clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+.new-line {
+    display: block;
+}
+
+.pull-right {
+    float: right;
+}
+
+.no-marg-b {
+    margin-bottom: 0;
+}

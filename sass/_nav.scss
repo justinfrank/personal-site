@@ -1,0 +1,42 @@
+.logo {
+    width: 100%;
+    max-width: 60px;
+    display: block;
+
+    img {
+        display: block;
+        width: 100%;
+    }
+
+    &:hover:before,
+    &:before {
+        content: '';
+        display: none;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+        margin: auto auto 25px;
+    }
+
+}
+
+nav {
+    text-align: right;
+    a {
+        letter-spacing: 0.1em;
+    }
+
+    @media screen and (max-width: $screen-sm) {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+}
+
+
+
+.nav {
+    text-align: right;
+    @media screen and (max-width: $screen-sm) {
+        font-size: 14px;
+    }
+}

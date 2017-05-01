@@ -1,0 +1,45 @@
+a {
+    color: $deep-cove;
+    transition: 0.3s all ease-in-out;
+    position: relative;
+    text-decoration: none !important;
+    font-weight: 600;
+
+    &:before,
+    &:after {
+        content: '';
+        opacity: 0;
+        width: 0;
+        position: absolute;
+        height: 2px;
+        transition: 0.3s all ease-in-out;
+        background-color: $deep-cove;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    &:before {
+        top: 50%;
+    }
+
+    &:after {
+        bottom: 0;
+        width: 100%;
+        opacity: 1;
+    }
+
+    &:hover {
+        color: $ruby;
+    }
+
+    &:hover:before {
+        opacity: 1;
+        background-color: $ruby;
+        width: 100%;
+    }
+    &:hover:after {
+        opacity: 0;
+        background-color: $ruby;
+        width: 0;
+    }
+}

@@ -1,0 +1,50 @@
+header {
+    padding-top: 2em;
+    height: 100%;
+    max-height: 450px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center bottom;
+    border-bottom: 14px solid;
+    overflow: hidden;
+    position: relative;
+
+    @media screen and (max-width: $screen-sm-min) {
+        max-height: 375px;
+    }
+
+    &.plains {
+        background-image: url('../../assets/img/plains1x.jpg');
+        border-color: $ruby;
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url('../../assets/img/plains2x.jpg');
+        }
+    }
+
+    &.sunset {
+        background-image: url('../../assets/img/sunset1x.jpg');
+        border-color: $electric-blue;
+        @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+            background-image: url('../../assets/img/sunset2x.jpg');
+        }
+    }
+}
+
+.header-content {
+    display: block;
+    width: 90%;
+    margin: auto;
+    position: relative;
+    height: initial;
+    min-height: 320px;
+    margin-top: 90px;
+
+    @media screen and (max-width: $screen-sm) {
+        margin-top: 0;
+        min-height: 200px
+    }
+    @media screen and (max-width: $screen-xs) {
+        margin-top: 0;
+        min-height: 130px
+    }
+}

@@ -1,0 +1,76 @@
+.purple-haze {
+    position: relative;
+    background-color: $deep-cove;
+    z-index: 1;
+    background-image: none;
+    max-height: 520px;
+
+    &:before {
+        content: '';
+        position: absolute;
+        mix-blend-mode: overlay;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $deep-cove;
+        z-index: -1;
+        /* For browsers that do not support gradients */
+        background: linear-gradient(-45deg, darken($electric-blue, 10%) 5%, transparent 20%,transparent 50%,transparent 80%, $ruby 95%);
+        /* Standard syntax */
+    }
+    &:after {
+        content: '';
+        position: absolute;
+
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: $deep-cove;
+        z-index: -2;
+        /* For browsers that do not support gradients */
+        background-image: url(../../assets/img/topography.png);
+        mix-blend-mode: color-burn;
+        /* Standard syntax */
+    }
+}
+
+@supports (background-blend-mode: color-burn) {
+    .purple-haze {
+
+    }
+}
+@media screen and (max-width: $screen-sm) {
+    .purple-haze {
+        max-height: none;
+
+        .callout {
+            // max-width: 75%;
+            // float: right;
+        }
+    }
+}
+@media screen and (max-width: $tablet) {
+    .purple-haze {
+        .avatar {
+        }
+
+        .callout {
+            // max-width: 85%;
+        }
+
+        .text-about {
+            // max-width: 85%;
+            margin-left: 0;
+        }
+    }
+}
+@media screen and (max-width: $mobile) {
+    .purple-haze {
+        .callout {
+            // max-width: 100%;
+        }
+    }
+}

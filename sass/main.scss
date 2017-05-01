@@ -1,0 +1,93 @@
+// font-family: 'Roboto Slab', serif;
+// font-family: 'Roboto Mono', monospace;
+// font-family: 'Source Code Pro', monospace;
+@import "variables";
+@import "mixins";
+@import "fonts";
+
+// framework
+@import "bootstrap";
+@import "bootstrap-inset";
+// @import "lemonade/lemonade";
+
+// grid
+@import "flex-grid";
+@import "css-grid";
+@import "glitch";
+
+// content styles
+@import "header";
+@import "nav";
+@import "type";
+@import "bg";
+@import "links";
+@import "list";
+
+// helper classes
+@import "helpers";
+
+body {
+    // font-family: 'Roboto Mono', monospace;
+    font-family: $source-code;
+    background-color: lighten($ruby, 48.5%);
+    padding: 0;
+    margin: 0;
+    color: $deep-cove;
+}
+
+// .wrapper {
+//     max-width: 90%;
+//     margin: auto;
+//     position: relative;
+//     display: block;
+// }
+
+section {
+    padding: 6rem 0;
+    background-color: $alto;
+    position: relative;
+
+    &.skillz {
+        padding-top: 4em;
+    }
+
+    &.footer {
+        padding: 2em 0;
+
+        &:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            height: 1px;
+            width: 100%;
+            max-width: 95%;
+            background-color: rgba($deep-cove, .2);
+            left: 50%;
+            transform: translateX(-50%);
+        }
+    }
+}
+
+.avatar {
+    display: block;
+    margin: auto auto -8em;
+    width: 100%;
+    position: relative;
+    z-index: -1;
+
+    @media screen and (max-width: $screen-md) {
+        margin-left: 0;
+        margin-bottom: -8em;
+    }
+    @media screen and (max-width: $screen-sm) {
+        // width: 100%;
+        margin-left: 0;
+        margin-bottom: -6em;
+    }
+    @media screen and (max-width: $screen-xs) {
+        // width: 95%;
+        // margin: auto;
+        margin-left: auto;
+        margin-bottom: -5em;
+    }
+}
