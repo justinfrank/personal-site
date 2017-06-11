@@ -6,7 +6,7 @@ header {
     background-size: cover;
     background-position: center bottom;
     border-bottom: 14px solid;
-    overflow: hidden;
+    // overflow: hidden;
     position: relative;
 
     @media screen and (max-width: $screen-sm-min) {
@@ -27,6 +27,22 @@ header {
         @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
             background-image: url('../../assets/img/sunset2x.jpg');
         }
+
+        // padding-top: 0;
+        //
+        // .fluid-container {
+        //     background: rgba($white, .85);
+        //     padding: 15px 0;
+        //
+        //     .nav {
+        //         max-width: 95%;
+        //         margin: auto;
+        //
+        //         .logo {
+        //             margin-bottom: -55px;
+        //         }
+        //     }
+        // }
     }
 }
 
@@ -37,7 +53,8 @@ header {
     position: relative;
     height: initial;
     min-height: 320px;
-    margin-top: 90px;
+    margin-top: 130px;
+    z-index: 100;
 
     @media screen and (max-width: $screen-sm) {
         margin-top: 0;

@@ -23,13 +23,15 @@
 @import "links";
 @import "list";
 
+@import "animations";
+
 // helper classes
 @import "helpers";
 
 body {
     // font-family: 'Roboto Mono', monospace;
-    font-family: $source-code;
-    background-color: lighten($ruby, 48.5%);
+    font-family: $open-sans;
+    background-color: $alto;
     padding: 0;
     margin: 0;
     color: $deep-cove;
@@ -43,8 +45,7 @@ body {
 // }
 
 section {
-    padding: 6rem 0;
-    background-color: $alto;
+    padding: 8rem 0;
     position: relative;
 
     &.skillz {

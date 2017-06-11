@@ -3,12 +3,13 @@
     background-color: $deep-cove;
     z-index: 1;
     background-image: none;
-    max-height: 520px;
+    max-height: 560px;
 
     &:before {
         content: '';
         position: absolute;
         mix-blend-mode: overlay;
+        opacity: 1;
 
         top: 0;
         right: 0;
@@ -17,9 +18,13 @@
         background: $deep-cove;
         z-index: -1;
         /* For browsers that do not support gradients */
-        background: linear-gradient(-45deg, darken($electric-blue, 10%) 5%, transparent 20%,transparent 50%,transparent 80%, $ruby 95%);
+        background: linear-gradient(-45deg, darken($electric-blue, 10%) 5%, transparent 50%, $ruby 95%);
+        background-size: 400% 400%;
+
         /* Standard syntax */
+        animation: Gradient 15s ease infinite;
     }
+
     &:after {
         content: '';
         position: absolute;
@@ -31,15 +36,19 @@
         background: $deep-cove;
         z-index: -2;
         /* For browsers that do not support gradients */
-        background-image: url(../../assets/img/topography.png);
+        background-image: url('../../assets/img/topography.png');
         mix-blend-mode: color-burn;
         /* Standard syntax */
     }
 }
-
 @supports (background-blend-mode: color-burn) {
     .purple-haze {
+        }
+}
 
+@media screen and (max-width: $screen-lg) {
+    .purple-haze {
+        max-height: 850px;
     }
 }
 @media screen and (max-width: $screen-sm) {
@@ -54,8 +63,7 @@
 }
 @media screen and (max-width: $tablet) {
     .purple-haze {
-        .avatar {
-        }
+        .avatar {}
 
         .callout {
             // max-width: 85%;
@@ -73,4 +81,148 @@
             // max-width: 100%;
         }
     }
+}
+
+
+// Portfolio Section
+
+.portfolio {
+    padding: 0 0 2em;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+    flex: 1 1 50%;
+    flex-wrap: nowrap;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.bg {
+    min-height: 10vh;
+    padding: 7.5vh 5vw;
+
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+
+    flex: 1 1 auto;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-content: flex-start;
+
+    p,
+    .title {
+        max-width: 755px;
+        // margin-left: auto;
+        // margin-right: auto;
+        padding: .5em .75em;
+        color: $deep-cove;
+
+    }
+
+    p {
+        margin-bottom: 1em;
+
+        &:last-of-type {
+            margin-bottom: 2em;
+        }
+    }
+
+    img {
+        display: block;
+        width: 100%;
+    }
+}
+
+.preview {
+    margin: auto auto 0;
+    position: relative;
+    border-radius: 5px;
+    overflow: hidden;
+    padding: 10px;
+
+    &:before {
+        content: "";
+        position: absolute;
+        background-color: rgba($deep-cove, .1);
+        width: 100%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        transform: translateX(0);
+        z-index: 1;
+    }
+
+    // &:after {
+    //     // content: url(assets/img/icon-preview.svg);
+    //     content: '';
+    //     position: absolute;
+    //     background-color: transparent;
+    //     background-image: url(../../assets/img/icon-preview.svg);
+    //     height: 5vw;
+    //     width: 5vw;
+    //     background-size: contain;
+    //     background-repeat: no-repeat;
+    //     background-position: center center;
+    //     top: 50%;
+    //     transform: translate(-50%, -50%);
+    //     left: 50%;
+    //     bottom: auto;
+    //     opacity: .3;
+    //     padding: 2vw;
+    //     z-index: 10;
+    // }
+
+    // &:hover:before {
+        // background-color: rgba($deep-cove, .2);
+    // }
+    //
+    // &:hover:after {
+    //     width: 6vw;
+    //     opacity: .5;
+    //     background-color: transparent;
+    //
+    // }
+    //
+    // &:active:after {
+    //     opacity: .7;
+    // }
+
+    img {
+        position: relative;
+        z-index: 10;
+    }
+}
+
+@media screen and (max-width: $screen-sm) {
+    .portfolio {
+        flex-wrap: wrap;
+    }
+
+    .preview {
+        &:after {
+            width: 30vw;
+            height: 30vw;
+        }
+
+        &:hover:after,
+        &:active:after {
+            width: 33vw;
+            height: 33vw;
+        }
+    }
+}
+
+.ruby {
+    border-left: .5em solid lighten($ruby, 5%);
+    border-right: .5em solid transparent;
+}
+
+.electricBlue {
+    border-right: .5em solid lighten($electric-blue, 5%);
+    border-left: .5em solid transparent;
 }
