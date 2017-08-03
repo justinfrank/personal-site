@@ -87,13 +87,17 @@
 // Portfolio Section
 
 .portfolio {
-    padding: 0 0 2em;
+    margin: 0 0 2em;
+    padding: 0;
+    border-left: .5em solid lighten($ruby, 5%);
+    border-right: .5em solid lighten($electric-blue, 5%);
+
     display: -webkit-flex;
     display: -ms-flex;
     display: flex;
 
     flex: 1 1 50%;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
 }
@@ -106,7 +110,7 @@
     display: -ms-flex;
     display: flex;
 
-    flex: 1 1 auto;
+    flex: 1 1 50%;
     flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
@@ -133,6 +137,17 @@
     img {
         display: block;
         width: 100%;
+    }
+
+    &:last-of-type:nth-child(odd) {
+        flex: 1 1 auto;
+
+        h5,
+        p {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
     }
 }
 
@@ -201,6 +216,11 @@
 @media screen and (max-width: $screen-sm) {
     .portfolio {
         flex-wrap: wrap;
+    }
+
+    .bg {
+        flex: 1 1 100%;
+        
     }
 
     .preview {
