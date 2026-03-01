@@ -35,6 +35,46 @@
   100% { background-position: 0 50%; }
 }
 
+// ─── Theme tokens ────────────────────────────────────────────────────────────
+
+:root {
+  --color-bg: #{$alto};
+  --color-surface: #{$alto};
+  --color-text: #{$deep-cove};
+  --color-link: #{$deep-cove};
+  --color-overlay-subtle: rgba(19, 16, 65, 0.1);
+  --color-divider: rgba(19, 16, 65, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #16151c;
+    --color-surface: #21202a;
+    --color-text: #{$alto};
+    --color-link: #{$alto};
+    --color-overlay-subtle: rgba(242, 242, 242, 0.12);
+    --color-divider: rgba(242, 242, 242, 0.15);
+  }
+}
+
+[data-theme="dark"] {
+  --color-bg: #16151c;
+  --color-surface: #21202a;
+  --color-text: #{$alto};
+  --color-link: #{$alto};
+  --color-overlay-subtle: rgba(242, 242, 242, 0.12);
+  --color-divider: rgba(242, 242, 242, 0.15);
+}
+
+[data-theme="light"] {
+  --color-bg: #{$alto};
+  --color-surface: #{$alto};
+  --color-text: #{$deep-cove};
+  --color-link: #{$deep-cove};
+  --color-overlay-subtle: rgba(19, 16, 65, 0.1);
+  --color-divider: rgba(19, 16, 65, 0.2);
+}
+
 // ─── Base ────────────────────────────────────────────────────────────────────
 
 *,
@@ -45,14 +85,14 @@
 
 body {
   font-family: $open-sans;
-  background-color: $alto;
+  background-color: var(--color-bg);
   padding: 0;
   margin: 0;
-  color: $deep-cove;
+  color: var(--color-text);
 }
 
 a {
-  color: $deep-cove;
+  color: var(--color-link);
   transition: 0.3s all ease-in-out;
   position: relative;
   text-decoration: none;
@@ -66,7 +106,7 @@ a {
     position: absolute;
     height: 2px;
     transition: 0.3s all ease-in-out;
-    background-color: $deep-cove;
+    background-color: var(--color-link);
     left: 50%;
     transform: translateX(-50%);
   }

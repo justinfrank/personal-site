@@ -63,7 +63,7 @@
     .title {
       max-width: 755px;
       padding: 0.5em 0.75em;
-      color: $deep-cove;
+      color: var(--color-text);
     }
 
     p {
@@ -102,7 +102,7 @@
     &::before {
       content: '';
       position: absolute;
-      background-color: rgba($deep-cove, 0.1);
+      background-color: var(--color-overlay-subtle);
       width: 100%;
       height: 100%;
       top: 0; right: 0; bottom: 0; left: 0;
@@ -134,7 +134,7 @@
   }
 
   .title {
-    background-color: rgba($deep-cove, 0.1);
+    background-color: var(--color-overlay-subtle);
     margin-bottom: 1em;
     margin-top: 0;
     font-weight: 700;

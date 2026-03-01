@@ -1,3 +1,29 @@
+<script>
+  import { onMount } from 'svelte';
+  let theme = $state('');
+
+  onMount(() => {
+    try { theme = localStorage.getItem('theme') ?? ''; } catch (e) {}
+  });
+
+  function toggleTheme() {
+    const isDark =
+      theme === 'dark' ||
+      (theme === '' && window.matchMedia('(prefers-color-scheme: dark)').matches);
+    const next = isDark ? 'light' : 'dark';
+    theme = next;
+    document.documentElement.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+  }
+
+  let icon = $derived(
+    theme === 'dark' ? '☀' :
+    theme === 'light' ? '☽' :
+    (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ? '☀' : '☽'
+  );
+</script>
+
 <header class="plains">
   <div class="container">
     <div class="nav-row">
@@ -7,7 +33,8 @@
       <nav>
         <a href="https://twitter.com/justin_frank" target="_blank" rel="noopener">Twitter</a> |
         <a href="https://dribbble.com/justin_frank" target="_blank" rel="noopener">Dribbble</a> |
-        <a href="http://codepen.io/justin_frank/" target="_blank" rel="noopener">Codepen</a>
+        <a href="http://codepen.io/justin_frank/" target="_blank" rel="noopener">Codepen</a> |
+        <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">{icon}</button>
       </nav>
     </div>
   </div>
@@ -61,7 +88,10 @@
     img { display: block; width: 100%; }
 
     &::before,
-    &:hover::before { display: none; }
+    &::after,
+    &:hover::before,
+    &:hover::after 
+    { display: none; }
 
     @media screen and (max-width: $screen-sm) {
       margin-bottom: 0;
@@ -77,6 +107,19 @@
       font-size: 14px;
       margin-bottom: 30px;
     }
+  }
+
+  .theme-toggle {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.1em;
+    padding: 0 0 0 0.5em;
+    color: var(--color-text);
+    line-height: 1;
+    vertical-align: middle;
+    appearance: none;
+    &:hover { opacity: 0.7; }
   }
 
   .header-content {

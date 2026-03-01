@@ -62,10 +62,10 @@
       font-size: 22px;
       font-weight: 700;
       z-index: 10;
-      color: $deep-cove;
+      color: var(--color-text);
       text-align: left;
       width: 100%;
-      background-color: rgba($deep-cove, 0.1);
+      background-color: var(--color-overlay-subtle);
       padding-left: 10px;
       padding-right: 20px;
       font-family: $butler-medium-stencil;

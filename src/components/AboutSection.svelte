@@ -118,7 +118,7 @@
   }
 
   .text-about {
-    background-color: $alto;
+    background-color: var(--color-surface);
     padding: 2rem 1rem 3rem 2rem;
     font-size: 18px;
     position: relative;

@@ -18,7 +18,7 @@
       height: 1px;
       width: 100%;
       max-width: 95%;
-      background-color: rgba($deep-cove, 0.2);
+      background-color: var(--color-divider);
       left: 50%;
       transform: translateX(-50%);
     }
