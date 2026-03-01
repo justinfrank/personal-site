@@ -31,6 +31,7 @@
         <img src="/img/logo.svg" alt="Justin Frank logo">
       </a>
       <nav>
+        <a href="/writing">Writing</a> |
         <a href="https://twitter.com/justin_frank" target="_blank" rel="noopener">Twitter</a> |
         <a href="https://dribbble.com/justin_frank" target="_blank" rel="noopener">Dribbble</a> |
         <a href="http://codepen.io/justin_frank/" target="_blank" rel="noopener">Codepen</a> |
