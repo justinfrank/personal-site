@@ -1,26 +1,18 @@
 {
-  "name": "personal-site",
-  "version": "1.0.0",
-  "description": "Justin Frank Personal Site",
-  "main": "Gruntfile.js",
+  "name": "justinfrank-me",
+  "version": "2.0.0",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "vite dev",
+    "build": "vite build",
+    "preview": "vite preview"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/justinfrank/personal-site.git"
-  },
-  "author": "Justin Frank",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/justinfrank/personal-site/issues"
-  },
-  "homepage": "https://github.com/justinfrank/personal-site#readme",
   "devDependencies": {
-    "browser-sync": "^2.18.8",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.1",
-    "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.4.1"
+    "@sveltejs/adapter-static": "^3.0.0",
+    "@sveltejs/kit": "^2.0.0",
+    "mdsvex": "^0.11.0",
+    "sass": "^1.70.0",
+    "svelte": "^5.0.0",
+    "vite": "^6.0.0"
   }
 }

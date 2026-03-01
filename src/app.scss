@@ -1,0 +1,115 @@
+@use 'lib/styles/variables' as *;
+
+// ─── Butler Fonts ────────────────────────────────────────────────────────────
+// Only woff/woff2 — IE8 is not a concern in 2026
+
+@font-face {
+  font-family: 'butler_stencilmedium';
+  src: url('/fonts/butler-stencil/butler_medium_stencil-webfont.woff2') format('woff2'),
+       url('/fonts/butler-stencil/butler_medium_stencil-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'butler_medium';
+  src: url('/fonts/butler/butler_medium-webfont.woff2') format('woff2'),
+       url('/fonts/butler/butler_medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'butlerbold';
+  src: url('/fonts/butler/butler_bold-webfont.woff2') format('woff2'),
+       url('/fonts/butler/butler_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ─── Keyframes ───────────────────────────────────────────────────────────────
+
+@keyframes Gradient {
+  0%   { background-position: 0 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}
+
+// ─── Base ────────────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $open-sans;
+  background-color: $alto;
+  padding: 0;
+  margin: 0;
+  color: $deep-cove;
+}
+
+a {
+  color: $deep-cove;
+  transition: 0.3s all ease-in-out;
+  position: relative;
+  text-decoration: none;
+  font-weight: 600;
+
+  &::before,
+  &::after {
+    content: '';
+    opacity: 0;
+    width: 0;
+    position: absolute;
+    height: 2px;
+    transition: 0.3s all ease-in-out;
+    background-color: $deep-cove;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  &::before { top: 50%; }
+
+  &::after {
+    bottom: 0;
+    width: 100%;
+    opacity: 1;
+  }
+
+  &:hover { color: $ruby; }
+
+  &:hover::before {
+    opacity: 1;
+    background-color: $ruby;
+    width: 100%;
+  }
+
+  &:hover::after {
+    opacity: 0;
+    background-color: $ruby;
+    width: 0;
+  }
+}
+
+// ─── Layout ──────────────────────────────────────────────────────────────────
+
+.container {
+  max-width: 1100px;
+  width: 90%;
+  margin: 0 auto;
+  position: relative;
+}
+
+section {
+  padding: 8rem 0;
+  position: relative;
+}
+
+// ─── Utilities ───────────────────────────────────────────────────────────────
+
+.text-white  { color: $white; }
+.text-small  { font-size: 12px; margin-bottom: 0; font-family: $source-code; }
+.no-marg-b   { margin-bottom: 0; }
