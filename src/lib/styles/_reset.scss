@@ -1,0 +1,26 @@
+@use './tokens/index' as *;
+
+// ─── Base reset ──────────────────────────────────────────────────────────────
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $helvetica-neue;
+  background-color: var(--color-bg);
+  padding: 0;
+  margin: 0;
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-link);
+  transition: opacity 0.2s ease-in-out;
+  text-decoration: none;
+  font-weight: 400;
+
+  &:hover { opacity: 0.6; }
+}

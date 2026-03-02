@@ -1,0 +1,34 @@
+// ─── Butler Fonts ────────────────────────────────────────────────────────────
+// Only woff/woff2 — IE8 is not a concern in 2026
+
+@font-face {
+  font-family: 'butler_stencilmedium';
+  src: url('/fonts/butler-stencil/butler_medium_stencil-webfont.woff2') format('woff2'),
+       url('/fonts/butler-stencil/butler_medium_stencil-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'butler_medium';
+  src: url('/fonts/butler/butler_medium-webfont.woff2') format('woff2'),
+       url('/fonts/butler/butler_medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'butlerbold';
+  src: url('/fonts/butler/butler_bold-webfont.woff2') format('woff2'),
+       url('/fonts/butler/butler_bold-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+// ─── Keyframes ───────────────────────────────────────────────────────────────
+
+@keyframes Gradient {
+  0%   { background-position: 0 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0 50%; }
+}

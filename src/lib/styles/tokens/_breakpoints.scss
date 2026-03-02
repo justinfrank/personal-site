@@ -1,0 +1,11 @@
+// Media Query Breakpoints
+$mobile: 30em;    // ~480px  Portrait mobile to landscape mobile
+$tablet: 48em;    // ~768px  Portrait tablet to landscape tablet
+$large: 68.750em; // ~1100px Small desktop to large desktop
+
+// Bootstrap 3 breakpoint aliases (for ported media queries)
+$screen-xs:     $mobile;   // 30em
+$screen-sm:     $tablet;   // 48em
+$screen-sm-min: $tablet;   // 48em
+$screen-md:     58em;      // ~928px
+$screen-lg:     $large;    // 68.75em

@@ -25,6 +25,11 @@
   let logoSrc = $derived(
     isDark ? '/img/justin-frank-logo-bw-light.svg' : '/img/justin-frank-logo-bw-dark.svg'
   );
+
+  $effect(() => {
+    const link = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
+    if (link) link.setAttribute('href', isDark ? '/img/justin-frank-logo-bw-light.svg' : '/img/justin-frank-logo-bw-dark.svg');
+  });
 </script>
 
 <header>
