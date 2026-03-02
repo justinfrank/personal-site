@@ -11,7 +11,7 @@
     padding: 5rem 0;
     max-width: 900px;
     margin: auto;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid var(--color-divider);
 
   }
 

@@ -18,10 +18,6 @@
 <style>
   .page-body {
     margin: 0 1.5rem;
-    border-left: 1px solid var(--color-divider);
-    border-right: 1px solid var(--color-divider);
-    border-bottom: 1px solid var(--color-divider);
-    border-radius: 0 0 16px 16px;
     overflow: hidden;
   }
 </style>

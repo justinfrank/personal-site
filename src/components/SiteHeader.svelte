@@ -1,5 +1,6 @@
 <script>
   import { onMount } from 'svelte';
+  import { Sun, Moon } from 'phosphor-svelte';
   let theme = $state('');
 
   onMount(() => {
@@ -16,11 +17,9 @@
     try { localStorage.setItem('theme', next); } catch (e) {}
   }
 
-  let icon = $derived(
-    theme === 'dark' ? '☀' :
-    theme === 'light' ? '☽' :
-    (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ? '☀' : '☽'
+  let isDark = $derived(
+    theme === 'dark' ||
+    (theme === '' && typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
   );
 
   let logoSrc = $derived(
@@ -43,7 +42,13 @@
           <nav>
             <a href="/writing">Writing</a>
             <a href="/#about">About me</a>
-            <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">{icon}</button>
+            <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">
+              {#if isDark}
+                <Sun size={28} weight="duotone" aria-hidden="true" />
+              {:else}
+                <Moon size={28} weight="duotone" aria-hidden="true" />
+              {/if}
+            </button>
           </nav>
         </div>
         <div class="hero-content">
@@ -92,7 +97,7 @@
     flex-direction: column;
     max-width: 900px;
     margin: auto;
-    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid var(--color-divider);
   }
 
   .nav-row {
@@ -130,10 +135,10 @@
     background: none;
     border: none;
     cursor: pointer;
-    font-size: 1.1em;
     padding: 0;
     color: var(--color-text);
-    line-height: 1;
+    display: flex;
+    align-items: center;
     appearance: none;
 
     &:hover { opacity: 0.7; }
@@ -146,7 +151,7 @@
   }
 
   .eyebrow {
-    font-size: $font-size-body-sm;
+    font-size: $font-size-body-md;
     line-height: $line-height-body-sm;
     font-weight: $font-weight-regular;
     margin: 0 0 0.5rem;
@@ -165,9 +170,9 @@
   }
 
   .subtitle {
-    font-size: $font-size-h4;
+    font-size: $font-size-h5;
     font-weight: $font-weight-medium;
-    line-height: $line-height-h4;
+    line-height: $line-height-h5;
     margin: 0.5rem 0 0;
 
     @media screen and (max-width: $screen-sm) {
