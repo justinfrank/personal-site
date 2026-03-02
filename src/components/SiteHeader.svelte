@@ -24,89 +24,97 @@
   );
 </script>
 
-<header class="plains">
-  <div class="container">
-    <div class="nav-row">
-      <a href="/" class="logo" aria-label="Justin Frank home">
-        <img src="/img/logo.svg" alt="Justin Frank logo">
-      </a>
-      <nav>
-        <a href="/writing">Writing</a> |
-        <a href="https://twitter.com/justin_frank" target="_blank" rel="noopener">Twitter</a> |
-        <a href="https://dribbble.com/justin_frank" target="_blank" rel="noopener">Dribbble</a> |
-        <a href="http://codepen.io/justin_frank/" target="_blank" rel="noopener">Codepen</a> |
-        <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">{icon}</button>
-      </nav>
+<header>
+  <div class="hero-card">
+    <div class="hero-layout">
+      <div class="hero-main">
+        <div class="nav-row">
+          <a href="/" class="logo" aria-label="Justin Frank home">
+            <img src="/img/justin-frank-logo-bw.svg" alt="Justin Frank logo">
+          </a>
+          <nav>
+            <a href="/writing">Writing</a>
+            <a href="/#about">About me</a>
+            <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">{icon}</button>
+          </nav>
+        </div>
+        <div class="hero-content">
+          <p class="eyebrow">Howdy, my name is</p>
+          <h1>Justin Frank</h1>
+          <p class="subtitle">Designer / Design Engineer</p>
+        </div>
+      </div>
     </div>
-  </div>
-  <div class="header-content">
-    <p class="header-text">howdy</p>
   </div>
 </header>
 
 <style lang="scss">
   header {
-    padding-top: 2em;
-    height: 100%;
-    max-height: 450px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center bottom;
-    border-bottom: 14px solid;
-    position: relative;
+    padding: var(--section-padding);
+  }
 
-    @media screen and (max-width: $screen-sm-min) {
-      max-height: 375px;
+  .hero-card {
+    background: var(--color-bg-subtle);
+    border-radius: 16px;
+    color: var(--color-text);
+    overflow: hidden;
+    box-shadow: var(--shadow-elevation-low);
+  }
+
+  .hero-layout {
+    display: flex;
+    flex-direction: row;
+    
+  }
+
+  .hero-sidebar {
+    width: 200px;
+    flex-shrink: 0;
+    border-right: 1px solid rgba(255, 255, 255, 0.3);
+
+    @media screen and (max-width: $screen-sm) {
+      display: none;
     }
+  }
 
-    &.plains {
-      background-image: url('/img/plains1x.jpg');
-      border-color: $ruby;
-
-      @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-        background-image: url('/img/plains2x.jpg');
-      }
-    }
+  .hero-main {
+    flex: 1;
+    padding: 1.5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    max-width: 900px;
+    margin: auto;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
   }
 
   .nav-row {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    @media screen and (max-width: $screen-sm) {
-      flex-direction: column;
-      align-items: center;
-      gap: 16px;
-    }
   }
 
   .logo {
-    width: 50px;
     display: block;
+    width: 43px;
     flex-shrink: 0;
 
     img { display: block; width: 100%; }
 
-    &::before,
-    &::after,
-    &:hover::before,
-    &:hover::after 
-    { display: none; }
-
-    @media screen and (max-width: $screen-sm) {
-      margin-bottom: 0;
-    }
+    &:hover { opacity: 0.7; }
   }
 
   nav {
-    text-align: right;
-    letter-spacing: 0.1em;
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
 
-    @media screen and (max-width: $screen-sm) {
-      text-align: center;
-      font-size: 14px;
-      margin-bottom: 30px;
+    a {
+      color: var(--color-text);
+      font-weight: 400;
+      font-size: 18px;
+      opacity: 1;
+
+      &:hover { opacity: 0.6; }
     }
   }
 
@@ -115,46 +123,47 @@
     border: none;
     cursor: pointer;
     font-size: 1.1em;
-    padding: 0 0 0 0.5em;
-    color: var(--color-text);
+    padding: 0;
+    color: #fff;
     line-height: 1;
-    vertical-align: middle;
     appearance: none;
+
     &:hover { opacity: 0.7; }
   }
 
-  .header-content {
-    display: block;
-    width: 90%;
-    margin: auto;
-    position: relative;
-    height: initial;
-    min-height: 320px;
-    margin-top: 130px;
-    z-index: 100;
+  .hero-content {
+    margin-top: auto;
+    padding-top: 6rem;
+    padding-bottom: 3rem;
+  }
+
+  .eyebrow {
+    font-size: $font-size-body-sm;
+    line-height: $line-height-body-sm;
+    font-weight: $font-weight-regular;
+    margin: 0 0 0.5rem;
+    opacity: 0.8;
+  }
+
+  h1 {
+    font-size: $font-size-h1;
+    font-weight: 700;
+    line-height: $line-height-h1;
+    margin: 0.25rem 0;
 
     @media screen and (max-width: $screen-sm) {
-      margin-top: 0;
-      min-height: 200px;
-    }
-
-    @media screen and (max-width: $screen-xs) {
-      margin-top: 0;
-      min-height: 130px;
+      font-size: clamp(36px, 10vw, $font-size-h1);
     }
   }
 
-  .header-text {
-    font-family: $butler-medium-stencil;
-    color: $white;
-    // CSS clamp() replaces jQuery FitText
-    font-size: clamp(20px, 20vw, 250px);
-    text-align: center;
-    margin: 0;
-    display: block;
-    width: 100%;
-    position: absolute;
-    transform: translateY(-50%);
-    top: 50%;
+  .subtitle {
+    font-size: $font-size-h4;
+    font-weight: $font-weight-medium;
+    line-height: $line-height-h4;
+    margin: 0.5rem 0 0;
+
+    @media screen and (max-width: $screen-sm) {
+      font-size: $font-size-h5;
+    }
   }
 </style>
