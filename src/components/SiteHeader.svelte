@@ -23,11 +23,7 @@
   );
 
   let logoSrc = $derived(
-    theme === 'dark' ? '/img/justin-frank-logo-bw-dark.svg' :
-    theme === 'light' ? '/img/justin-frank-logo-bw-light.svg' :
-    (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
-      ? '/img/justin-frank-logo-bw-dark.svg'
-      : '/img/justin-frank-logo-bw-light.svg'
+    isDark ? '/img/justin-frank-logo-bw-light.svg' : '/img/justin-frank-logo-bw-dark.svg'
   );
 </script>
 
