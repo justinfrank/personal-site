@@ -22,6 +22,14 @@
     (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
       ? '☀' : '☽'
   );
+
+  let logoSrc = $derived(
+    theme === 'dark' ? '/img/justin-frank-logo-bw-dark.svg' :
+    theme === 'light' ? '/img/justin-frank-logo-bw-light.svg' :
+    (typeof window !== 'undefined' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+      ? '/img/justin-frank-logo-bw-dark.svg'
+      : '/img/justin-frank-logo-bw-light.svg'
+  );
 </script>
 
 <header>
@@ -30,7 +38,7 @@
       <div class="hero-main">
         <div class="nav-row">
           <a href="/" class="logo" aria-label="Justin Frank home">
-            <img src="/img/justin-frank-logo-bw.svg" alt="Justin Frank logo">
+            <img src={logoSrc} alt="Justin Frank logo">
           </a>
           <nav>
             <a href="/writing">Writing</a>
@@ -124,7 +132,7 @@
     cursor: pointer;
     font-size: 1.1em;
     padding: 0;
-    color: #fff;
+    color: var(--color-text);
     line-height: 1;
     appearance: none;
 
