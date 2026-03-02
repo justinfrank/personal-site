@@ -11,7 +11,7 @@
     padding: 4rem 0 7rem;
     max-width: 900px;
     margin: auto;
-    border-left: 1px solid var(--color-divider);
+    border-left: var(--color-divider);
 
   }
 

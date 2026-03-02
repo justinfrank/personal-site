@@ -36,7 +36,8 @@
     time {
       font-family: $source-code;
       font-size: 14px;
-      color: rgba($deep-cove, 0.6);
+      // color: rgba($deep-cove, 0.6);
+      color: var(--brand);
     }
   }
 

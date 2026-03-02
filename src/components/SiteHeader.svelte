@@ -1,11 +1,10 @@
 <script>
-  import { onMount } from 'svelte';
+  import { browser } from '$app/environment';
   import { Sun, Moon } from 'phosphor-svelte';
-  let theme = $state('');
 
-  onMount(() => {
-    try { theme = localStorage.getItem('theme') ?? ''; } catch (e) {}
-  });
+  let theme = $state(
+    browser ? (document.documentElement.getAttribute('data-theme') ?? '') : ''
+  );
 
   function toggleTheme() {
     const isDark =
@@ -14,7 +13,10 @@
     const next = isDark ? 'light' : 'dark';
     theme = next;
     document.documentElement.setAttribute('data-theme', next);
-    try { localStorage.setItem('theme', next); } catch (e) {}
+    try {
+      localStorage.setItem('theme', next);
+      document.cookie = 'theme=' + next + '; path=/; max-age=31536000; SameSite=Lax';
+    } catch (e) {}
   }
 
   let isDark = $derived(
@@ -45,7 +47,7 @@
             <a href="/#about">About me</a>
             <button class="theme-toggle" onclick={toggleTheme} aria-label="Toggle dark mode">
               {#if isDark}
-                <Sun size={28} weight="duotone" aria-hidden="true" />
+                <Sun size={28} weight="duotone" color="#fff" secondary="#FF5A4B" aria-hidden="true" />
               {:else}
                 <Moon size={28} weight="duotone" aria-hidden="true" />
               {/if}
@@ -102,7 +104,7 @@
     flex-direction: column;
     max-width: 900px;
     margin: auto;
-    border-left: 1px solid var(--color-divider);
+    border-left: var(--color-divider);
   }
 
   .nav-row {

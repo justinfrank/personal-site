@@ -46,6 +46,7 @@
       align-items: baseline;
       gap: 1rem;
       text-decoration: none;
+      flex-direction: column;
 
       &::before,
       &::after { display: none; }
@@ -64,6 +65,7 @@
       font-size: 13px;
       opacity: 0.6;
       white-space: nowrap;
+      color: var(--brand);
     }
   }
 </style>

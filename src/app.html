@@ -28,8 +28,10 @@
         if (t === 'dark' || t === 'light') {
           document.documentElement.setAttribute('data-theme', t);
         } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          t = 'dark';
           document.documentElement.setAttribute('data-theme', 'dark');
         }
+        if (t) document.cookie = 'theme=' + t + '; path=/; max-age=31536000; SameSite=Lax';
       } catch (e) {}
     })();
   </script>

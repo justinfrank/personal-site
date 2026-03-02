@@ -1,5 +1,6 @@
 <script>
   import '../app.scss';
+  import CustomCursor from '$components/CustomCursor.svelte';
 
   let { children } = $props();
 </script>
@@ -13,4 +14,5 @@
   gtag('config', 'G-XXXXXXXXXX');
 </script> -->
 
+<CustomCursor />
 {@render children()}
