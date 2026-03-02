@@ -54,6 +54,20 @@
   --color-link: #fff;
   --color-overlay-subtle: rgba(255, 255, 255, 0.08);
   --color-divider: 1px solid rgba(255, 90, 75, 0.3);
+
+  /* Standard syntax for most modern browsers */
+  ::selection {
+    background-color: rgba(255, 90, 75, 0.5);
+    /* Change the background highlight color */
+    color: var(--color-text);
+    /* Change the text color when highlighted */
+  }
+
+  /* Vendor-prefixed for Mozilla Firefox compatibility */
+  ::-moz-selection {
+    background-color: rgba(255, 90, 75, 0.5);
+    color: var(--color-text);
+  }
 }
 
 [data-theme="light"] {
@@ -64,4 +78,19 @@
   --color-link: #0d0d0d;
   --color-overlay-subtle: rgba(0, 0, 0, 0.05);
   --color-divider: 1px solid rgba(255, 90, 75, 0.3);
+
+  /* Standard syntax for most modern browsers */
+  ::selection {
+    background-color: rgba(255, 90, 75, 0.5);
+    /* Change the background highlight color */
+    color: var(--color-text);
+    /* Change the text color when highlighted */
+  }
+
+  /* Vendor-prefixed for Mozilla Firefox compatibility */
+  ::-moz-selection {
+    background-color: rgba(255, 90, 75, 0.5);
+    color: var(--color-text);
+  }
 }
+
