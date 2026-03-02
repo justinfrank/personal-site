@@ -3,6 +3,7 @@
 // ─── Theme tokens ────────────────────────────────────────────────────────────
 
 :root {
+  --brand: rgb(255, 90, 75);
   --color-bg: #fff;
   --color-bg-subtle: #f8f8f8;
   --color-bg-invert: #000;
@@ -12,6 +13,7 @@
   --color-overlay-subtle: rgba(0, 0, 0, 0.05);
   --color-divider: rgba(0, 0, 0, 0.15);
   --shadow-color: 286deg 36% 56%;
+  --shadow-color: 0deg 0% 63%;
   --shadow-elevation-low:
     0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
     0px 0.9px 1px -1.2px hsl(var(--shadow-color) / 0.34),
@@ -19,17 +21,17 @@
   --shadow-elevation-medium:
     0px 0.5px 0.6px hsl(var(--shadow-color) / 0.36),
     0px 1.7px 1.9px -0.8px hsl(var(--shadow-color) / 0.36),
-    0px 4.3px 4.8px -1.7px hsl(var(--shadow-color) / 0.36),
-    0px 10.4px 11.7px -2.5px hsl(var(--shadow-color) / 0.36);
+    0.1px 4.2px 4.7px -1.7px hsl(var(--shadow-color) / 0.36),
+    0.2px 10.3px 11.6px -2.5px hsl(var(--shadow-color) / 0.36);
   --shadow-elevation-high:
     0px 0.5px 0.6px hsl(var(--shadow-color) / 0.34),
-    0px 3px 3.4px -0.4px hsl(var(--shadow-color) / 0.34),
-    0px 5.7px 6.4px -0.7px hsl(var(--shadow-color) / 0.34),
-    0px 9.3px 10.5px -1.1px hsl(var(--shadow-color) / 0.34),
-    0px 14.9px 16.8px -1.4px hsl(var(--shadow-color) / 0.34),
-    0px 23.3px 26.2px -1.8px hsl(var(--shadow-color) / 0.34),
-    0.1px 35.4px 39.8px -2.1px hsl(var(--shadow-color) / 0.34),
-    0.1px 52.2px 58.7px -2.5px hsl(var(--shadow-color) / 0.34);
+    0.1px 3px 3.4px -0.4px hsl(var(--shadow-color) / 0.34),
+    0.1px 5.6px 6.3px -0.7px hsl(var(--shadow-color) / 0.34),
+    0.2px 9.2px 10.4px -1.1px hsl(var(--shadow-color) / 0.34),
+    0.3px 14.7px 16.5px -1.4px hsl(var(--shadow-color) / 0.34),
+    0.4px 23px 25.9px -1.8px hsl(var(--shadow-color) / 0.34),
+    0.6px 34.9px 39.3px -2.1px hsl(var(--shadow-color) / 0.34),
+    0.9px 51.4px 57.8px -2.5px hsl(var(--shadow-color) / 0.34);
   --section-padding: 1.5rem 1.5rem 0;
 }
 
@@ -51,15 +53,15 @@
   --color-text: #fff;
   --color-link: #fff;
   --color-overlay-subtle: rgba(255, 255, 255, 0.08);
-  --color-divider: rgba(255, 255, 255, 0.1);
+  // --color-divider: rgba(255, 90, 75, 0.2);
 }
 
 [data-theme="light"] {
   --color-bg: #fff;
-  --color-bg-subtle: #f8f8f8;
+  --color-bg-subtle: #ffffff;
   --color-surface: #{$alto};
   --color-text: #0d0d0d;
   --color-link: #0d0d0d;
   --color-overlay-subtle: rgba(0, 0, 0, 0.05);
-  --color-divider: rgba(0, 0, 0, 0.1);
+  --color-divider: rgba(255, 90, 75, 0.2);
 }

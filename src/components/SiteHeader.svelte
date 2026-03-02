@@ -23,12 +23,12 @@
   );
 
   let logoSrc = $derived(
-    isDark ? '/img/justin-frank-logo-bw-light.svg' : '/img/justin-frank-logo-bw-dark.svg'
+    isDark ? '/img/justin-frank-logo-bw-dark.svg' : '/img/justin-frank-logo-bw-light.svg'
   );
 
   $effect(() => {
     const link = document.querySelector('link[rel="icon"][type="image/svg+xml"]');
-    if (link) link.setAttribute('href', isDark ? '/img/justin-frank-logo-bw-light.svg' : '/img/justin-frank-logo-bw-dark.svg');
+    if (link) link.setAttribute('href', isDark ? '/img/justin-frank-logo-bw-dark.svg' : '/img/justin-frank-logo-bw-light.svg');
   });
 </script>
 
@@ -55,7 +55,7 @@
         <div class="hero-content">
           <p class="eyebrow">Howdy, my name is</p>
           <h1>Justin Frank</h1>
-          <p class="subtitle">Designer / Design Engineer</p>
+          <p class="subtitle">Designer <span class="brand">/</span> Design Engineer</p>
         </div>
       </div>
     </div>
@@ -65,6 +65,10 @@
 <style lang="scss">
   header {
     padding: var(--section-padding);
+  }
+
+  .brand {
+    color: var(--brand);
   }
 
   .hero-card {
