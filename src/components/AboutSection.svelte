@@ -16,9 +16,9 @@
   }
 
   .bio {
-    font-size: $font-size-body-lg;
-    line-height: $line-height-body-lg;
-    font-weight: $font-weight-regular;
+    font-size: var(--font-size-body-lg);
+    line-height: var(--line-height-body-lg);
+    font-weight: var(--font-weight-regular);
     max-width: 55ch;
     margin: 0;
     color: var(--color-text);

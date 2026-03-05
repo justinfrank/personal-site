@@ -1,5 +1,3 @@
-@use './tokens/index' as *;
-
 // ─── Layout ──────────────────────────────────────────────────────────────────
 
 .container {
@@ -16,6 +14,6 @@ section {
 
 // ─── Utilities ───────────────────────────────────────────────────────────────
 
-.text-white  { color: $white; }
-.text-small  { font-size: 12px; margin-bottom: 0; font-family: $source-code; }
+.text-white  { color: var(--color-white); }
+.text-small  { font-size: 12px; margin-bottom: 0; font-family: var(--font-mono); }
 .no-marg-b   { margin-bottom: 0; }

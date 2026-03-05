@@ -40,8 +40,8 @@
   .portfolio {
     margin: 0 0 2em;
     padding: 0;
-    border-left: 0.5em solid lighten($ruby, 5%);
-    border-right: 0.5em solid lighten($electric-blue, 5%);
+    border-left: 0.5em solid var(--color-ruby-light);
+    border-right: 0.5em solid var(--color-electric-blue-light);
     display: flex;
     flex: 1 1 50%;
     flex-wrap: wrap;
@@ -116,21 +116,21 @@
   }
 
   .ruby {
-    border-left: 0.5em solid lighten($ruby, 5%);
+    border-left: 0.5em solid var(--color-ruby-light);
     border-right: 0.5em solid transparent;
   }
 
   .electricBlue {
-    border-right: 0.5em solid lighten($electric-blue, 5%);
+    border-right: 0.5em solid var(--color-electric-blue-light);
     border-left: 0.5em solid transparent;
   }
 
-  .text-white { color: $white; }
+  .text-white { color: var(--color-white); }
 
   .text-small {
     font-size: 12px;
     margin-bottom: 0;
-    font-family: $source-code;
+    font-family: var(--font-mono);
   }
 
   .title {

@@ -61,7 +61,7 @@
     }
 
     time {
-      font-family: $source-code;
+      font-family: var(--font-mono);
       font-size: 13px;
       opacity: 0.6;
       white-space: nowrap;

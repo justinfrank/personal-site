@@ -75,16 +75,32 @@
 
   .hero-card {
     background: var(--color-bg-subtle);
-    border-radius: 16px;
+    border-radius: 12px;
     color: var(--color-text);
     overflow: hidden;
     box-shadow: var(--shadow-elevation-low);
+    position: relative;
+
+    // &:after {
+    //   content: "";
+    //   position: absolute;
+    //   background-image: url('/img/textures/paper-creased.jpeg');
+    //   height: 100%;
+    //   width: 100%;
+    //   z-index: 0;
+    //   top: 50%;
+    //   left: 50%;
+    //   transform: translate(-50%, -50%);
+    //   mix-blend-mode: lighten;
+    //   opacity: .3;
+    // }
   }
 
   .hero-layout {
     display: flex;
     flex-direction: row;
-    
+    z-index: 1;
+    position: relative;
   }
 
   .hero-sidebar {
@@ -129,7 +145,7 @@
     gap: 1.5rem;
 
     a {
-      color: var(--color-text);
+      color: var(--color-link);
       font-weight: 400;
       font-size: 18px;
       opacity: 1;
@@ -158,32 +174,32 @@
   }
 
   .eyebrow {
-    font-size: $font-size-body-md;
-    line-height: $line-height-body-sm;
-    font-weight: $font-weight-regular;
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body-sm);
+    font-weight: var(--font-weight-regular);
     margin: 0 0 0.5rem;
     opacity: 0.8;
   }
 
   h1 {
-    font-size: $font-size-h1;
+    font-size: var(--font-size-h1);
     font-weight: 700;
-    line-height: $line-height-h1;
+    line-height: var(--line-height-h1);
     margin: 0.25rem 0;
 
     @media screen and (max-width: $screen-sm) {
-      font-size: clamp(36px, 10vw, $font-size-h1);
+      font-size: clamp(36px, 10vw, var(--font-size-h1));
     }
   }
 
   .subtitle {
-    font-size: $font-size-h5;
-    font-weight: $font-weight-medium;
-    line-height: $line-height-h5;
+    font-size: var(--font-size-h5);
+    font-weight: var(--font-weight-medium);
+    line-height: var(--line-height-h5);
     margin: 0.5rem 0 0;
 
     @media screen and (max-width: $screen-sm) {
-      font-size: $font-size-h5;
+      font-size: var(--font-size-h5);
     }
   }
 </style>

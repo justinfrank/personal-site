@@ -68,7 +68,7 @@
       background-color: var(--color-overlay-subtle);
       padding-left: 10px;
       padding-right: 20px;
-      font-family: $butler-medium-stencil;
+      font-family: var(--font-serif-stencil);
       letter-spacing: 0.05em;
     }
 

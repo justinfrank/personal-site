@@ -34,9 +34,8 @@
     }
 
     time {
-      font-family: $source-code;
+      font-family: var(--font-mono);
       font-size: 14px;
-      // color: rgba($deep-cove, 0.6);
       color: var(--brand);
     }
   }

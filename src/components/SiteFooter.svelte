@@ -29,6 +29,6 @@
   .text-small {
     font-size: 12px;
     margin-bottom: 0;
-    font-family: $source-code;
+    font-family: var(--font-mono);
   }
 </style>

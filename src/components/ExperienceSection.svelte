@@ -29,17 +29,17 @@
   }
 
   h2 {
-    font-size: $font-size-h3;
-    line-height: $line-height-h3;
-    font-weight: $font-weight-regular;
+    font-size: var(--font-size-h3);
+    line-height: var(--line-height-h3);
+    font-weight: var(--font-weight-regular);
     margin: 0 0 2.5rem;
     color: var(--color-text);
   }
 
   h3 {
-    font-size: $font-size-h5;
-    line-height: $line-height-h5;
-    font-weight: $font-weight-medium;
+    font-size: var(--font-size-h5);
+    line-height: var(--line-height-h5);
+    font-weight: var(--font-weight-medium);
     margin: 0 0 1rem;
     color: var(--color-text);
   }
@@ -62,15 +62,15 @@
   }
 
   .role-meta p {
-    font-size: $font-size-body-md;
-    line-height: $line-height-body-md;
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body-md);
     margin: 0;
     color: var(--color-text);
   }
 
   .role-desc {
-    font-size: $font-size-body-md;
-    line-height: $line-height-body-md;
+    font-size: var(--font-size-body-md);
+    line-height: var(--line-height-body-md);
     margin: 0;
     color: var(--color-text);
   }
