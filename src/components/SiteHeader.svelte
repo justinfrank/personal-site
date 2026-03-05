@@ -56,9 +56,21 @@
           </nav>
         </div>
         <div class="hero-content">
-          <p class="eyebrow">Howdy, my name is</p>
-          <h1>Justin Frank</h1>
-          <p class="subtitle">Designer <span class="brand">/</span> Design Engineer</p>
+          <p class="eyebrow">
+            <span class="word">Howdy,</span>
+            <span class="word">my</span>
+            <span class="word">name</span>
+            <span class="word">is</span>
+          </p>
+          <h1>
+            <span class="word">Justin Frank</span>
+          </h1>
+          <p class="subtitle">
+            <span class="word">Designer</span>
+            <span class="brand">/</span>
+            <span class="word">Design</span>
+            <span class="word">Engineer</span>
+          </p>
         </div>
       </div>
     </div>
@@ -72,6 +84,19 @@
 
   .brand {
     color: var(--brand);
+  }
+
+  .word {
+    display: inline-block;
+    border-radius: 3px;
+    padding: 0 2px;
+    cursor: default;
+    transition: background-color 0.15s ease;
+
+    &:hover {
+      background-color: rgba(255, 90, 75, 0.5);
+      color: var(--color-text);
+    }
   }
 
   .hero-card {

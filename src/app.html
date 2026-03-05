@@ -41,7 +41,7 @@
   <div>%sveltekit.body%</div>
   <svg class="noise-overlay" xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" preserveAspectRatio="none">
     <filter id="noise-z22xr1g29gf" x="0%" y="0%" width="100%" height="100%">
-      <feTurbulence type="turbulence" baseFrequency="1.15" numOctaves="1" seed="2" stitchTiles="stitch">
+      <feTurbulence type="turbulence" baseFrequency="1.15" numOctaves="8" seed="2" stitchTiles="stitch">
         <animate attributeName="seed" from="0" to="100" dur="2.6666666666666665s" repeatCount="indefinite"></animate>
       </feTurbulence>
     </filter>
@@ -52,13 +52,25 @@
 
 <style>
   .noise-overlay {
-    position: absolute;
+    position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: screen;
-    opacity: .5;
+    mix-blend-mode: multiply;
+    opacity: .25;
     pointer-events: none;
     z-index: 0;
+  }
+
+  [data-theme="dark"] .noise-overlay {
+    mix-blend-mode: screen;
+    opacity: .4;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :not([data-theme="light"]) .noise-overlay {
+      mix-blend-mode: difference;
+      opacity: .5;
+    }
   }
 </style>
