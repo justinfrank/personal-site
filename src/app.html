@@ -18,8 +18,8 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@400;600&display=swap"></noscript>
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Code+Pro:wght@400;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Source+Code+Pro:wght@400;600&display=swap"></noscript>
 
   <script>
     (function () {
@@ -56,21 +56,13 @@
     inset: 0;
     width: 100%;
     height: 100%;
-    mix-blend-mode: multiply;
-    opacity: .25;
+    mix-blend-mode: difference;
+    opacity: .3;
     pointer-events: none;
     z-index: 0;
   }
 
   [data-theme="dark"] .noise-overlay {
-    mix-blend-mode: screen;
     opacity: .4;
-  }
-
-  @media (prefers-color-scheme: dark) {
-    :not([data-theme="light"]) .noise-overlay {
-      mix-blend-mode: difference;
-      opacity: .5;
-    }
   }
 </style>

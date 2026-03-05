@@ -68,8 +68,7 @@
           <p class="subtitle">
             <span class="word">Designer</span>
             <span class="brand">/</span>
-            <span class="word">Design</span>
-            <span class="word">Engineer</span>
+            <span class="word">Design Engineer</span>
           </p>
         </div>
       </div>
